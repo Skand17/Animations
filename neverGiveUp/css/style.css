@@ -1,0 +1,126 @@
+body{
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+body:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff 55%, #2196f3);
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+}
+
+.bridge-line {
+    position: absolute;
+    left: 50%;
+    width: 150px;
+    height: 50px;
+    background: transparent;
+    border-bottom: 2px solid #11c5e2;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: 2s ease;
+}
+
+video {
+    position: absolute;
+    right:0;
+    left: 0;
+    top:0;
+    bottom:0;
+    width:100%;
+    height: 100%;
+    z-index: 99;
+    mix-blend-mode: difference;
+    object-fit: cover;
+}
+
+.bridge-line:before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 600px;
+    background-color: #35d6af;
+    top: 52px;
+    left: 0;
+}
+
+.square {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%,-50%);
+    width: 50px;
+    height: 50px;
+    animation-name: nevergiveup;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    background-color: #17d5dc;
+}
+
+
+
+
+.wrapper > h2 {
+    position: absolute;
+    right: 0;
+    left: 54px;
+    transform: rotate(-22deg);
+    font-size: 41px;
+    font-weight: 700;
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.100em;
+}
+
+.square:nth-child(2){
+    left: initial;
+    right: 0;
+
+    animation-name: nevergiveup2;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes nevergiveup {
+    0%{
+        transform-origin: bottom right;
+        transform: translate(-50%,-50%) rotate(0deg) 
+        translateX(25px);
+    }
+    50%{
+        
+        transform-origin: bottom right;
+        transform: translate(-50%,-50%) rotate(90deg);
+    }
+    100%{
+        
+        transform-origin: bottom right;
+        transform: translate(-50%,-50%) rotate(90deg) translateY(25px);
+    }
+}
+
+@keyframes nevergiveup2 {
+    0%{
+        transform-origin: bottom left ;
+        transform: translate(50%,-50%) rotate(0deg) 
+        translateX(25px);
+    }
+    50%{
+        
+        transform-origin: bottom left ;
+        transform: translate(50%,-50%) rotate(-90deg);
+    }
+    100%{
+        
+        transform-origin: bottom left ;
+        transform: translate(-50%,-50%) rotate(-90deg) translateY(25px);
+    }
+}
